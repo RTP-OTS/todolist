@@ -3,7 +3,7 @@ name: Trigger Playwright Test
 on:
   push:
     branches:
-      - develop  # หรือ branch ที่ต้องการให้ trigger
+      - develop
 
 jobs:
   trigger-playwright:
@@ -15,5 +15,5 @@ jobs:
           curl -X POST \
           -H "Accept: application/vnd.github.v3+json" \
           -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
-          https://api.github.com/repos/RTP-OTS/playwright/actions/workflows/playwright-tests.yml/dispatches \
+          https://api.github.com/repos/RTP-OTS/playwright/actions/workflows/automate-test.yml/dispatches \
           -d '{"ref":"develop"}'
